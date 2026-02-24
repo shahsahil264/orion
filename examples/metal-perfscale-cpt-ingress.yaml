@@ -34,11 +34,11 @@ tests:
         value: total_avg_rps
         agg_type: avg
 
-    - name: passthrough_avg_lat
+    - name: passthrough_p95_lat
       config.termination: passthrough
-      metric_of_interest: avg_lat_us
+      metric_of_interest: p95_lat_us
       agg:
-        value: avg_lat_us
+        value: p95_lat_us
         agg_type: avg
 
     - name: http_avg_rps
@@ -50,11 +50,11 @@ tests:
         value: total_avg_rps
         agg_type: avg
 
-    - name: http_avg_lat
+    - name: http_p95_lat
       config.termination: http
-      metric_of_interest: avg_lat_us
+      metric_of_interest: p95_lat_us
       agg:
-        value: avg_lat_us
+        value: p95_lat_us
         agg_type: avg
 
     - name: reencrypt_avg_rps
@@ -64,11 +64,11 @@ tests:
         value: total_avg_rps
         agg_type: avg
 
-    - name: reencrypt_avg_lat
+    - name: reencrypt_p95_lat
       config.termination: reencrypt
-      metric_of_interest: avg_lat_us
+      metric_of_interest: p95_lat_us
       agg:
-        value: avg_lat_us
+        value: p95_lat_us
         agg_type: avg
 
     - name: edge_avg_rps
@@ -80,9 +80,9 @@ tests:
         value: total_avg_rps
         agg_type: avg
 
-    - name: edge_avg_lat
+    - name: edge_p95_lat
       config.termination: edge
-      metric_of_interest: avg_lat_us
+      metric_of_interest: p95_lat_us
       agg:
-        value: avg_lat_us
+        value: p95_lat_us
         agg_type: avg

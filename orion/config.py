@@ -234,9 +234,13 @@ def merge_lists(metrics: List[Any], inherited_metrics: List[Any]) -> List[Any]:
     for m in inherited_metrics:
         found = False
         for metric in metrics:
-            if metric["name"] == m["name"] and metric["metricName"] == m["metricName"]:
-                logger.info("Use metric in lower level config file %s - %s", m["name"], m["metricName"])
-                found = True
+            if metric["name"] == m["name"]:
+                if "metricName" in metric and "metricName" in m and metric["metricName"] == m["metricName"]:
+                    logger.info("Use metric in lower level config file %s - %s", m["name"], m["metricName"])
+                    found = True
+                if "metricName.keyword" in metric and "metricName.keyword" in m and metric["metricName.keyword"] == m["metricName.keyword"]:
+                    logger.info("Use metric in lower level config file %s - %s", m["name"], m["metricName.keyword"])
+                    found = True
         if not found:
             merged.append(m)
     merged.extend(metrics)

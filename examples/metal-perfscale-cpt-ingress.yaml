@@ -86,3 +86,10 @@ tests:
       agg:
         value: p95_lat_us
         agg_type: avg
+
+    - name: http_avg_cpu_usage_router_pods
+      config.termination: http
+      metric_of_interest: infra_metrics.avg_cpu_usage_router_pods
+      agg:
+        value: infra_metrics.avg_cpu_usage_router_pods
+        agg_type: avg
